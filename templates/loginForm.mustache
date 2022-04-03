@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<form method="post">
+    <div class="mt-3">
+        <input type="text" name="login" id="login" value="" placeholder="Login" class="form-control"/>
+        {{#errors.login}}<small class="text-warning">{{errors.login}}</small>{{/errors.login}}
+    </div>
+
+    <div class="mt-3">
+        <input type="password" name="password" id="password" value="" placeholder="Password" class="form-control"/>
+        {{#errors.password}}<small class="text-warning">{{errors.password}}</small>{{/errors.password}}
+        
+    </div>
+    <input type="hidden" name="action" value="{{action}}" />
+    <input type="submit" value="{{action}}" class="btn btn-primary"/>
+        {{#errors.badlogin}}<small class="text-warning">{{errors.badlogin}}</small>{{/errors.badlogin}}
+
+</form>

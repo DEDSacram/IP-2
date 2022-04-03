@@ -1,0 +1,10 @@
+<h1>Karta osoby: {{data.name}} {{data.surnameshort}}</h1>
+<h2>Jméno:{{data.name}}</h2>
+<h2>Příjmení:{{data.surname}}</h2>
+<h2>Pozice:{{data.job}}</h2>
+<h2>Mzda: {{data.wage}}</h2>
+<h2>Místnost:<a href="room.php?room_id={{data.room_id}}">{{data.RoomName}}</a></h2>
+<h2>Klíče:</h2>
+{{# keys }}
+<a href="room.php?room_id={{room_id}}">{{RoomName}}</a><br>
+{{/ keys }}

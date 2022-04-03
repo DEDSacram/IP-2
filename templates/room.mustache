@@ -1,0 +1,15 @@
+<h1>Místnost č.{{room.no}}</h1>
+<h2>Název:{{room.name}}</h2>
+<h2>Telefon:{{room.phone}}</h2>
+<h2>Lidé:</h2>
+{{#osoby}}
+    <a href="person.php?personid={{employee_id}}">{{ surname }} {{ nameshort }}</a><br>
+{{/osoby}}
+{{#plat}}
+<h2>Průměrný plat:{{plat.mage}}</h2>
+{{/plat}}
+<h2>Klíče:</h2>
+{{#keys}}
+<a href="person.php?personid={{employee_id}}">{{ surname }} {{ nameshort }}</a><br>
+{{/keys}}
+<a href="roomList.php">Zpět</a>

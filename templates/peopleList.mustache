@@ -1,0 +1,32 @@
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <title>Seznam zaměstnanců</title>
+    </head>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Jméno <a href="peopleList.php?poradi=nazev_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="peopleList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+      <th scope="col">Místnost <a href="peopleList.php?poradi=mistnost_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="peopleList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+      <th scope="col">Telefon <a href="peopleList.php?poradi=telefon_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="peopleList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+      <th scope="col">Pozice <a href="peopleList.php?poradi=pozice_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="peopleList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+      {{#admin}}
+        <th>Akce</th>
+      {{/admin}}
+    </tr>
+  </thead>
+   <tbody>
+   	  {{# data }}
+        <tr><td><a href="person.php?personid={{employee_id}}">{{surname}} {{name}}</a></td><td>{{RoomName}}</td><td>{{phone}}</td><td>{{job}}</td>
+        {{#admin}}
+          <td><a href="updatePeople.php?employee_id={{ employee_id }}" class="btn btn-primary">Editovat</a><a href="peopleList.php?employee_id={{ employee_id}}" class="btn btn-danger">Odstranit</a></td>
+        {{/admin}}
+        
+        </tr>
+     
+      {{/ data }}
+  </tbody>
+  </table>
+  {{#admin}}
+  <a href="admin.php" class="btn btn-primary">Editovat</a>
+  <a href="insertpeople.php" class="btn btn-primary">Nový člověk</a>
+  {{/admin}}
+ 

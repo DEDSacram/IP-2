@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+<table class="table">
+    <thead>
+    <tr>
+        <th>Název<a href="roomList.php?poradi=nazev_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="roomList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+        <th>Číslo<a href="roomList.php?poradi=nazev_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="roomList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+        <th>Telefon<a href="roomList.php?poradi=nazev_up"><i class="bi bi-arrow-up-circle-fill"></i></a><a href="roomList.php"><i class="bi bi-arrow-down-circle-fill"></i></a></th>
+        {{#admin}}
+        <th>Akce</th>
+        {{/admin}}
+    </tr>
+    </thead>
+    <tbody>
+    {{# rooms }}
+        <tr>
+            <td><a href="room.php?room_id={{ room_id }}">{{ name }}</a></td>
+            <td>{{ no }}</td>
+            <td>{{ phone }}</td>
+          
+             {{#admin}}
+            <td><a href="update.php?room_id={{ room_id }}" class="btn btn-primary">Editovat</a><a href="roomList.php?room_id={{ room_id }}" class="btn btn-danger">Odstranit</a></td>
+            {{/admin}}
+        </tr>
+    {{/ rooms }}
+    </tbody>
+</table>
+{{#admin}}
+<a href="admin.php" class="btn btn-primary">Editovat</a>
+ <a href="insertroom.php" class="btn btn-primary">Nová místnost</a>
+{{/admin}}
